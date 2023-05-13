@@ -59,67 +59,79 @@
   
 }
 
-@media (min-width: 950px){
- .Menu-hambu{
-  display: none;
- }
-}
-
-@media (max-width: 950px) {
- .header-link-consulta{
-  display: none;
- }
- .header-navegacao{
-  display: none;
- }
- .header-menu{
-  background-color: #036454;
- }
- .header-navegacao ul{
-    margin-top: 4rem;
+@media (max-width: 950px){
+  .header-menu{
+    background-color: #00856F;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+  }
+  .h2-header{
+    color: #fff;
+  }
+  .header-navegacao ul{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
     align-items: center;
- }
- .header-menu{
-  display: flex;
-  justify-content: space-between;
- }
- .header-navegacao a {
-  font-weight: 700;
-  color: #fff;
-  font-size: 18px;
- }
- .header-navegacao a:hover{
-  border-bottom: none;
-  transition: none;
-  padding-bottom: 0;
- }
- .IMG-header img{
-  margin-left: 2rem;
- }
+  }
+  .h2-header{
+   position: absolute;
+   left: 1rem;
+   top: 1rem;
+  }
+  .menu-faketrigger{
+    position: absolute;
+    top: 1.2rem;
+    right: 1rem;
+    width: 35px;
+    height: 35px;
+    opacity: 0;
+  }
 
- .Menu-hambu{
-  margin-right: 2rem;
-  border: none;
-  background-color: transparent;
- }
- .contain-menu{
-  position: relative;
- }
- .hambu-nav nav, ul, li{
-  display: flex;
-  flex-direction: column;
- }
- .Active {
-  display: block;
- }
- .adds, .img-menu{
-  margin-bottom: 18.8rem;
- }
- .adds-header{
-  transition: 5s;
- }
- }
-
+  .header-navegacao ul, li, a {
+    color: #fff;
+    font-size: 1.4rem;
+    padding: 0.3rem;
+  }
+  .header-link-consulta{
+   margin: 2rem 0 10rem 0;
+  }
+  #style-link-hamburguer{
+    color: #00856F;
+    background-color: #fff;
+    padding: 0.7rem 1rem ;
+    border-radius: 5rem;
+  }
+  .header-navegacao a:hover{
+    font-weight: bolder;
+    border-bottom: 2px solid #ffffff;
+    padding-bottom: 0.7rem;
+    transition: 0.2s;
+  }
+  #menu #menu-lines {
+    position: absolute;
+    right: 1rem;
+    top: 1.4rem;
+    z-index: 999;
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+  }
+  #menu #menu-lines span {
+    display: block;
+    width: 35px;
+    height: 5px;
+    margin-bottom: 8px;
+    background-color: #fff;
+    border-radius: 3px;
+  }
+  .ativo{
+    display: block;
+  }
+  
+}
 
 .main-intro{
   display: flex;
