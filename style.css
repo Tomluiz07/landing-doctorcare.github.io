@@ -9,10 +9,13 @@
   margin-right: auto;
 
 }
+.h2-header{
+  color: #00856F;
+}
 .header-menu{
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center;
     background-color:#DCE9E2;
     padding: 1.5rem 0; 
@@ -26,46 +29,70 @@
     flex-wrap: wrap;
     list-style: none;
     gap: 2rem;
+    margin-right: 1rem;
     font-size: 17px;
     font-weight: 500;
     color: #00856F;
-    position: relative;
 }
+
 .header-navegacao ul, a{
   text-decoration: none;
   color: #00856F;
-}
-.header-navegacao a:hover{
-  font-weight: bolder;
-  border-bottom: 2px solid #00856F;
-  padding-bottom: 0.7rem;
-  transition: 0.2s;
 }
 
 .header-menu img{
     margin-left: 6rem;
 }
-.header-link-consulta{
+.header-link-consulta a{
     text-transform: uppercase;
     font-weight: 600;
     border: 2px solid #00856F;
     padding: 0.5rem 0.9rem;
     border-radius: 25px;  
+    margin-left: 4rem;
 }
-.header-link-consulta:hover {
-  color: #fff;
+.header-navegacao a:hover{
+   font-weight: bolder;
+    border-bottom: 2px solid #00856F;
+    padding-bottom: 0.7rem;
+    transition: 0.2s;
+}
+.header-link-consulta a:hover{
   background-color: #00856F;
-  font-weight: 500;
-  
+  color: #fff;
+}
+
+@media (min-width: 950px){
+  .menu-faketrigger{
+    display: none;
+  }
+  #style-link-hamburguer{
+    display: block;
+  }
 }
 
 @media (max-width: 950px){
-  .header-menu{
+  #style-link-hamburguer{
+    display: none;
+  }
+  .header-navegacao {
     background-color: #00856F;
-    display: flex;
-    flex-direction: column;
     justify-content: center;
     height: 100vh;
+    width: 100%;
+    display: none;
+    position: absolute;
+    top: 3.5rem;
+    }
+    .header-navegacao ul {
+      margin-top: 5rem;
+    }
+  .header-menu{
+    background-color: #00856F;
+    padding-bottom: 2.5rem;
+  }
+  .active{
+    display: block;
   }
   .h2-header{
     color: #fff;
@@ -73,7 +100,6 @@
   .header-navegacao ul{
     display: flex;
     flex-direction: column;
-    margin-bottom: 1rem;
     align-items: center;
   }
   .h2-header{
@@ -81,36 +107,51 @@
    left: 1rem;
    top: 1rem;
   }
-  .menu-faketrigger{
-    position: absolute;
-    top: 1.2rem;
-    right: 1rem;
-    width: 35px;
-    height: 35px;
-    opacity: 0;
-  }
+.menu-faketrigger {
+  top: 1.3rem;
+  right: 1rem;
+  width: 35px;
+  height: 35px;
+  position: absolute;
+  z-index: 1000;
+  opacity: 0;
+ }
+
+ .menu-faketrigger:checked~.menu-lines span:nth-child(1){
+  transform-origin: 0% 0%;
+  transform: rotate(40deg) scaleX(1.25);
+}
+ .menu-faketrigger:checked~.menu-lines span:nth-child(2){
+ opacity: 0;
+}
+
+ .menu-faketrigger:checked~.menu-lines span:nth-child(3){
+  transform-origin: 0% 100%;
+  transform: rotate(-40deg) scaleX(1.25);
+}
 
   .header-navegacao ul, li, a {
     color: #fff;
     font-size: 1.4rem;
     padding: 0.3rem;
   }
-  .header-link-consulta{
-   margin: 2rem 0 10rem 0;
-  }
-  #style-link-hamburguer{
+#style-link-hamburguer {
+    border-bottom: none;
+    transition: 0.2s;
     color: #00856F;
     background-color: #fff;
-    padding: 0.7rem 1rem ;
-    border-radius: 5rem;
-  }
+    border-radius: 50px;
+    padding: 0.4rem 0.7rem;
+    text-transform: uppercase;
+}
+
   .header-navegacao a:hover{
     font-weight: bolder;
     border-bottom: 2px solid #ffffff;
     padding-bottom: 0.7rem;
     transition: 0.2s;
   }
-  #menu #menu-lines {
+ .menu-lines {
     position: absolute;
     right: 1rem;
     top: 1.4rem;
@@ -119,17 +160,16 @@
     height: 35px;
     cursor: pointer;
   }
-  #menu #menu-lines span {
+ .menu-lines span {
     display: block;
-    width: 35px;
+    width: 34px;
     height: 5px;
     margin-bottom: 8px;
     background-color: #fff;
     border-radius: 3px;
+    transition: all ease .2s;
   }
-  .ativo{
-    display: block;
-  }
+
   
 }
 
